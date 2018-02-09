@@ -41,6 +41,8 @@ function validaformulario(){
     }
     //validar tarjeta
     tarjeta=parseInt(tarjeta);
+    
+   // muestraCampo();
     if(tarjeta && !visa.test(tarjeta) && !mastercard.test(tarjeta)){     
             todoCorrecto=false;
             mensaje+="El numero de tarjeta no es correcto";
@@ -56,31 +58,32 @@ function validaformulario(){
     
 }
 //con esta funcion mostraremos el campo de la tarjeta de credito si el usuario ha introdicido direccion
+/*var contenedor= document.getElementById("Campotarjeta");
+    var inputTarjeta=document.createElement('INPUT');
+    inputTarjeta.setAttribute("id", "tarjeta");
+inputTarjeta.setAttribute("type", "text");
+    contenedor.appendChild(inputTarjeta);*/
+    
 function muestraCampo(){
     /*
     <label for="tarjeta" >Numero de tarjeta de credito:  </label>
-        <input type="text" id="tarjeta"/><br>
+        <input type="text" id="tarjeta"/><br>*/
         
-    
-    var direccion= document.getElementById("direccion").value;
-   
-    if(direccion!=""){
-         var contenedor= document.getElementById("Campotarjeta");
+    var direccion= document.getElementById("direccion").value;/*
+    var contenedor= document.getElementById("Campotarjeta");
     var inputTarjeta=document.createElement('INPUT');
     inputTarjeta.type='TEXT';
     inputTarjeta.id='tarjeta';
-    contenedor.appendChild(inputTarjeta); document.getElementById("Campotarjeta").style.display='block';
-    }else{
-       document.removeChild(select.childNodes[0]);
-        document.getElementById("Campotarjeta").style.display='none';
-    }*/
-    var direccion= document.getElementById("direccion").value;
+    contenedor.appendChild(inputTarjeta);*/
     
     if(direccion!=""){
-        document.getElementById("Campotarjeta").style.display='block';
+        
+     document.getElementById("Campotarjeta").style.display='block';
     }else{
+        //contenedor.removeChild(contenedor.childNodes[0]);
         document.getElementById("Campotarjeta").style.display='none';
     }
+    
 
 }
 
@@ -222,6 +225,16 @@ function generaComentarios(){
     comentarios.appendChild(parrafo);
     comentarios.appendChild(parrafo2);
     comentarios.appendChild(parrafo3);
+
+    /*var arrayComentarios=[];
+    var comentario =  document.getElementById("comentario").value;
+    arrayComentarios.push(comentario);
+    arrayComentarios.reverse();
+    for(let i=0; i>4; i++){
+        var mensaje= arrayComentarios[i];
+        
+        
+    }*/
     
 }
 function generaCajaComentarios(){
@@ -260,11 +273,45 @@ function generaCajaComentarios(){
             $("i.fa.fa-comment").text(contador);
             $("i.fa.fa-comment").css("color", "grey");
 
+            //borramos el exceso de comentarios
+            /*var limite = 0;
+            var comentarios = document.getElementById("cajaComentarios");
+            if(comentarios.childNodes.length>=5){
+
+            }
+            while(limite<5){
+                comentarios.removeChild(comentarios.childNodes[0]);
+                limite++;
+            }*/
+            //borraComentarios();
+            
             e.preventDefault();
         });
         
 }
+function borraComentarios(){
+    
+    /*
+    var comentarios = document.getElementById("cajaComentarios");
+            var arrayComentarios=[];
+            var comentario =  document.getElementById("comentario").value;
+            arrayComentarios.push(comentario);
+            arrayComentarios.reverse();
+            //if(arrayComentarios.length==5){
+            while(arrayComentarios.length>4){
+                arrayComentarios.pop();
+                
 
+            }
+            //}
+            for(let i=0; i<arrayComentarios.length; i++){
+                var mensaje= arrayComentarios[i];
+                var parrafo = document.createElement('p');
+                var texto = document.createTextNode(mensaje);
+                parrafo.appendChild(texto);
+                comentarios.appendChild(parrafo);
+            }*/
+}
 function muestraComentario(){
     var nombre= obtenerCookie("name");
     var com= document.getElementById("comentario").value;
@@ -273,7 +320,17 @@ function muestraComentario(){
     var texto = document.createTextNode(nombre+": "+com);
     var usuario = document.createTextNode(nombre);
     parrafo.appendChild(texto);
-    comentarios.appendChild(parrafo);
+    //comentarios.appendChild(parrafo);
+   comentarios.insertBefore(parrafo, comentarios.childNodes[1]); 
+    //comentarios.insertBefore(parrafo, segundo_p);
+    //elemento_padre.insertBefore(nuevo_nodo,nodo_de_referencia);
+    // Creamos el nuevo párrafo
+    //var nuevo_parrafo = document.createElement('p').appendChild(document.createTextNode('Nuevo párrafo.'));
     
+    // Recojemos en una variable el segundo párrafo
+    //var segundo_p = document.getElementById('padre').getElementsByTagName('p')[1];
+    
+    // Y ahora lo insertamos
+    //document.getElementById('padre').insertBefore(nuevo_parrafo,segundo_p);
 }
 
