@@ -226,16 +226,6 @@ function generaComentarios(){
     comentarios.appendChild(parrafo2);
     comentarios.appendChild(parrafo3);
 
-    /*var arrayComentarios=[];
-    var comentario =  document.getElementById("comentario").value;
-    arrayComentarios.push(comentario);
-    arrayComentarios.reverse();
-    for(let i=0; i>4; i++){
-        var mensaje= arrayComentarios[i];
-        
-        
-    }*/
-    
 }
 function generaCajaComentarios(){
     var comentarios=document.getElementById("cajaComentarios");
@@ -273,44 +263,9 @@ function generaCajaComentarios(){
             $("i.fa.fa-comment").text(contador);
             $("i.fa.fa-comment").css("color", "grey");
 
-            //borramos el exceso de comentarios
-            /*var limite = 0;
-            var comentarios = document.getElementById("cajaComentarios");
-            if(comentarios.childNodes.length>=5){
-
-            }
-            while(limite<5){
-                comentarios.removeChild(comentarios.childNodes[0]);
-                limite++;
-            }*/
-            //borraComentarios();
-            
             e.preventDefault();
         });
         
-}
-function borraComentarios(){
-    
-    /*
-    var comentarios = document.getElementById("cajaComentarios");
-            var arrayComentarios=[];
-            var comentario =  document.getElementById("comentario").value;
-            arrayComentarios.push(comentario);
-            arrayComentarios.reverse();
-            //if(arrayComentarios.length==5){
-            while(arrayComentarios.length>4){
-                arrayComentarios.pop();
-                
-
-            }
-            //}
-            for(let i=0; i<arrayComentarios.length; i++){
-                var mensaje= arrayComentarios[i];
-                var parrafo = document.createElement('p');
-                var texto = document.createTextNode(mensaje);
-                parrafo.appendChild(texto);
-                comentarios.appendChild(parrafo);
-            }*/
 }
 function muestraComentario(){
     var nombre= obtenerCookie("name");
@@ -320,17 +275,7 @@ function muestraComentario(){
     var texto = document.createTextNode(nombre+": "+com);
     var usuario = document.createTextNode(nombre);
     parrafo.appendChild(texto);
-    //comentarios.appendChild(parrafo);
-   comentarios.insertBefore(parrafo, comentarios.childNodes[1]); 
-    //comentarios.insertBefore(parrafo, segundo_p);
-    //elemento_padre.insertBefore(nuevo_nodo,nodo_de_referencia);
-    // Creamos el nuevo párrafo
-    //var nuevo_parrafo = document.createElement('p').appendChild(document.createTextNode('Nuevo párrafo.'));
+    comentarios.insertBefore(parrafo, comentarios.childNodes[1]); 
     
-    // Recojemos en una variable el segundo párrafo
-    //var segundo_p = document.getElementById('padre').getElementsByTagName('p')[1];
-    
-    // Y ahora lo insertamos
-    //document.getElementById('padre').insertBefore(nuevo_parrafo,segundo_p);
 }
 
