@@ -1,13 +1,13 @@
-
-function muestraCampo(){
-   
-        
-    var direccion= document.getElementById("direccion").value;/*
-    var contenedor= document.getElementById("Campotarjeta");
+var contenedor= document.getElementById("Campotarjeta");
     var inputTarjeta=document.createElement('INPUT');
     inputTarjeta.type='TEXT';
     inputTarjeta.id='tarjeta';
-    contenedor.appendChild(inputTarjeta);*/
+    contenedor.appendChild(inputTarjeta);
+    
+function muestraCampo(){
+   
+        
+    var direccion= document.getElementById("direccion").value;
     
     if(direccion!=""){
         

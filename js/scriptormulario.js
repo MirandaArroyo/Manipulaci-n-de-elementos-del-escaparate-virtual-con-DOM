@@ -64,17 +64,15 @@ function validaformulario(){
 inputTarjeta.setAttribute("type", "text");
     contenedor.appendChild(inputTarjeta);*/
     
-function muestraCampo(){
-    /*
-    <label for="tarjeta" >Numero de tarjeta de credito:  </label>
-        <input type="text" id="tarjeta"/><br>*/
+/*function muestraCampo(){
+    
         
     var direccion= document.getElementById("direccion").value;/*
     var contenedor= document.getElementById("Campotarjeta");
     var inputTarjeta=document.createElement('INPUT');
     inputTarjeta.type='TEXT';
     inputTarjeta.id='tarjeta';
-    contenedor.appendChild(inputTarjeta);*/
+    contenedor.appendChild(inputTarjeta);
     
     if(direccion!=""){
         
@@ -85,7 +83,7 @@ function muestraCampo(){
     }
     
 
-}
+}*/
 
 function campoPaises(){
     var state = new Array("Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antarctica", "Antigua and Barbuda",
