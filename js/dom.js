@@ -1,26 +1,28 @@
-var contenedor= document.getElementById("Campotarjeta");
-    var inputTarjeta=document.createElement('INPUT');
-    inputTarjeta.type='TEXT';
-    inputTarjeta.id='tarjeta';
-    contenedor.appendChild(inputTarjeta);
+var contenedor = document.getElementById("Campotarjeta");
+var inputTarjeta = document.createElement('INPUT');
+inputTarjeta.type = 'TEXT';
+inputTarjeta.id = 'tarjeta';
+contenedor.appendChild(inputTarjeta);
+var visible = document.getElementById("Campotarjeta");
+function muestraCampo() {
+    'use strict';
     
-function muestraCampo(){
-   
-        
-    var direccion= document.getElementById("direccion").value;
+    var direccion = document.getElementById("direccion").value;
     
-    if(direccion!=""){
+    if (direccion !== "") {
         
-     document.getElementById("Campotarjeta").style.display='block';
-    }else{
+        visible.style.display = 'block';
+    } else {
         //contenedor.removeChild(contenedor.childNodes[0]);
-        document.getElementById("Campotarjeta").style.display='none';
+        visible.style.display = 'none';
     }
     
 
 }
 
-function campoPaises(){
+function campoPaises() {
+    'use strict';
+    
     var state = new Array("Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antarctica", "Antigua and Barbuda",
     "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados",
     "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana",
